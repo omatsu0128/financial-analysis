@@ -1,0 +1,36 @@
+.Contents
+  .top__box
+    .Contents__btn
+      = link_to '編集する', edit_company_path(@company), method: :get, class: 'Btn__line'
+    .Contents__btn  
+      = link_to '削除する', company_path(@company), method: :delete, class: 'Btn__line'
+
+  .top
+    .top_title 企業詳細
+    
+  .Company_box
+    .Company__Inner
+      .Company__Tables
+        %table.Company__Table
+          %tbody.Company__TableBody
+            %tr
+              %th 企業名
+              %td 
+                = @company.name
+            %tr
+              %th 所在地
+              %td 
+                = @company.prefecture.name
+            %tr
+              %th 業種
+              %td 
+                = @company.industry.name
+            %tr
+              %th 企業規模
+              %td 
+                = @company.company_size.name
+            %tr
+              %th 内容・情報 
+              %td 
+                = @company.information
+

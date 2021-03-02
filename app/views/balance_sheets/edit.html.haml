@@ -1,0 +1,45 @@
+.Contents
+  .top
+    .top_title B/S編集
+
+  .contents__main__block
+    .Main_box
+      = form_with model:@balance_sheet do |f|
+        .Company__contents
+          .input_box
+            %label.box_name 対象企業
+            %span.required 必須
+            = f.collection_select :company_id, Company.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+        .Company__contents  
+          .input_box
+            %label.box_name 会計年度
+            %span.required 必須
+            = f.text_field :fiscal_year, class: "Form__inputText", placeholder: '西暦：20xx'
+        .Company__contents  
+          .input_box
+            %label.box_name 流動資産
+            %span.required 必須
+            = f.text_field :current_assets, class: "Form__inputText", placeholder: '円単位'
+        .Company__contents  
+          .input_box
+            %label.box_name 固定資産
+            %span.required 必須
+            = f.text_field :fixed_assets, class: "Form__inputText", placeholder: '円単位'
+        .Company__contents  
+          .input_box
+            %label.box_name 流動負債
+            %span.required 必須
+            = f.text_field :current_liabilities, class: "Form__inputText", placeholder: '円単位' 
+        .Company__contents  
+          .input_box
+            %label.box_name 固定負債
+            %span.required 必須
+            = f.text_field :fixed_liabilities, class: "Form__inputText", placeholder: '円単位' 
+        .Company__contents  
+          .input_box
+            %label.box_name 純資産
+            %span.required 必須
+            = f.text_field :capital_stock, class: "Form__inputText", placeholder: '円単位'
+        .Contents__first
+          .Contents__second
+            = f.submit "編集する", class: "form__submit"

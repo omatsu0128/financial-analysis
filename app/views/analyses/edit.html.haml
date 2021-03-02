@@ -1,0 +1,30 @@
+.Contents
+  .top
+    .top_title 査定編集
+
+  .contents__main__block
+    .Main_box
+      = form_with model:@analysis do |f|
+        .Analysis__contents 
+          .input_box
+            %label.box_name 対象企業
+            %span.required 必須
+            = f.collection_select :company_id, Company.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+        .Analysis__contents 
+          .input_box
+            %label.box_name 会計年度
+            %span.required 必須
+            = f.text_field :fiscal_year, class: "Form__inputText", placeholder: '西暦：20xx'
+        .Analysis__contents 
+          .input_box
+            %label.box_name 債務者区分
+            %span.required 任意
+            = f.collection_select :classification_id, Classification.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+        .Analysis__contents 
+          .input_text
+            %label.box_name 判定理由
+            %span.required_1 任意
+            = f.text_area :information, class: "section__second", rows: "20", placeholder: "財務分析結果、形式判定、実質判定"
+        .Contents__first
+          .Contents__second
+            = f.submit "編集する", class: "form__submit"

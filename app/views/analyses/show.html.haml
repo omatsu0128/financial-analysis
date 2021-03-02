@@ -1,0 +1,319 @@
+.Contents
+  .top__box
+    .Contents__btn
+      = link_to '編集する', edit_analysis_path(@analysis), method: :get, class: 'Btn__line'
+    .Contents__btn
+      = link_to '削除する', analysis_path(@analysis), method: :delete, class: 'Btn__line'
+
+  .top
+    .top_title 査定結果詳細
+
+  .Company_box
+    .Company__Inner
+      .Company__Tables
+        %table.Company__Table
+          %tbody.Company__TableBody
+            %tr
+              %th 企業名
+              %td
+                = @analysis.company.name
+            %tr
+              %th 会計年度
+              %td
+                = @analysis.fiscal_year
+                年
+            %tr
+              %th 債務者区分
+              %td 
+                = @analysis.classification.name
+            %tr
+              %th 判定理由
+              %td 
+                = @analysis.information
+            %tr
+              %th 分析結果
+              %td
+                - if @profit_and_loss_statement.present? && @balance_sheet.present?
+                  - if @profit_and_loss_statement_1.present? && @balance_sheet_1.present?
+                    %p 
+                    = "#{@analysis.company.name}の当期の売上高は#{@profit_and_loss_statement.sales.to_s(:delimited, delimiter: ',')}円となり、"
+                    - if @answer_10 > 0
+                      = "前期と比べ#{@answer_10}％増加した。"
+                    - elsif @answer_10 < 0
+                      = "前期と比べ#{@answer_10 * -1}％減少した。"
+                    - else
+                      = "前期と同様である。"
+                    %p
+                    = "当期純利益は#{@profit_and_loss_statement.profit.to_s(:delimited, delimiter: ',')}円となり、"
+                    - if @answer_11 > 0
+                      = "前期と比べ#{@answer_11}％増加した。"
+                    - elsif @answer_11 < 0
+                      = "前期と比べ#{@answer_11 * -1}％減少した。"
+                    - else
+                      = "前期と同様である。"
+                    %p #{@analysis.company.name}の収益性の変化については以下の通りである。
+                    = "①総資本経常利益率は、前期#{@answer_1}％、当期#{@answer_2}％と"
+                    - if @answer_1 < @answer_2
+                      = "#{@answer_3}％上昇しており、当期の総合的な収益性は前期に比べて良好になった。"
+                    - elsif @answer_1 > @answer_2
+                      = "#{@answer_3 * -1}％下降しており、総合的な収益性は前期と比べて悪化した。"
+                    - else 
+                      = "変わりなく、当期の総合的な収益性は前期と同様である。"
+                    %p 総資本経常利益率を、売上高経常利益率と総資本回転率とに分解することによって、より詳細に収益性を分析することができる。
+                    = "②売上高経常利益率は、前期#{@answer_4}％、当期#{@answer_5}％と"
+                    - if @answer_4 < @answer_5
+                      = "#{@answer_6}％上昇しており、売上高に対する会社本来の主たる営業活動および財務活動の結果を反映した収益性は良好になった。"
+                    - elsif @answer_4 > @answer_5
+                      = "#{@answer_6 * -1}％下降しており、売上高に対する会社本来の主たる営業活動および財務活動の結果を反映した収益性は悪化した。"
+                    - else 
+                      = "変わりなく、売上高に対する会社本来の主たる営業活動および財務活動の結果を反映した収益性は前期と同様である。"
+                    %p  
+                    = "③総資本回転率は、前期#{@answer_7}回、当期#{@answer_8}回と"
+                    - if @answer_7 < @answer_8
+                      = "#{@answer_9}回増えており、総資本の運用効率は向上した。"
+                    - elsif @answer_7 > @answer_8
+                      = "#{@answer_9 * -1}回減っており、総資本の運用効率は悪化した。"
+                    - else 
+                      = "変わりなく、総資本の運用効率は前期と同様である。"
+
+    .top
+      .top_title 収益性分析
+
+    .Company__Inner
+      .Company__Tables_1
+        %table.Company__Table_1
+          %tbody.Company__TableBody_1
+            - if @profit_and_loss_statement.present?    
+              - if @profit_and_loss_statement_1.present?
+                .Contents__Inner
+                %tr
+                  %th 会計年度
+                  - @arr.each do |hash|
+                    %td
+                      = link_to hash.fiscal_year, profit_and_loss_statement_path(hash.id), method: :get, class: 'Btn__line'
+                      年
+                  %td 増減率
+                %tr
+                  %th （１）売上高原価率
+                  - @arr.each do |hash|
+                    %td
+                      = sprintf( "%.1f", hash.cost_of_goods_sold / hash.sales.to_f * 100)
+                      ％
+                  %td
+                    = sprintf( "%.1f", (@profit_and_loss_statement.cost_of_goods_sold / @profit_and_loss_statement.sales.to_f * 100 - @profit_and_loss_statement_1.cost_of_goods_sold / @profit_and_loss_statement_1.sales.to_f * 100))
+                    ％
+                %tr
+                  %th （２）売上高総利益率
+                  - @arr.each do |hash|
+                    %td
+                      = sprintf( "%.1f", hash.gross_profit / hash.sales.to_f * 100)
+                      ％
+                  %td
+                    = sprintf( "%.1f", (@profit_and_loss_statement.gross_profit / @profit_and_loss_statement.sales.to_f * 100 - @profit_and_loss_statement_1.gross_profit / @profit_and_loss_statement_1.sales.to_f * 100))
+                    ％
+                %tr
+                  %th （３）売上高販管費率
+                  - @arr.each do |hash|
+                    %td                  
+                      = sprintf( "%.1f", hash.selling_expenses / hash.sales.to_f * 100)
+                      ％
+                  %td
+                    = sprintf( "%.1f", (@profit_and_loss_statement.selling_expenses / @profit_and_loss_statement.sales.to_f * 100 - @profit_and_loss_statement_1.selling_expenses / @profit_and_loss_statement_1.sales.to_f * 100))
+                    ％
+                %tr
+                  %th （４）売上高営業利益率
+                  - @arr.each do |hash|
+                    %td
+                      = @answer_4 = sprintf( "%.1f", hash.operating_income / hash.sales.to_f * 100)
+                      ％
+                  %td
+                    = sprintf( "%.1f", (@profit_and_loss_statement.operating_income / @profit_and_loss_statement.sales.to_f * 100 - @profit_and_loss_statement_1.operating_income / @profit_and_loss_statement_1.sales.to_f * 100))
+                    ％
+                %tr
+                  %th （５）売上高経常益率
+                  - @arr.each do |hash|
+                    %td
+                      = sprintf( "%.1f", hash.ordinary_income / hash.sales.to_f * 100)
+                      ％
+                  %td
+                    = @answer_6 = sprintf( "%.1f", (@profit_and_loss_statement.ordinary_income / @profit_and_loss_statement.sales.to_f * 100 - @profit_and_loss_statement_1.ordinary_income / @profit_and_loss_statement_1.sales.to_f * 100))
+                    ％
+                %tr
+                  %th （６）売上高純利益率
+                  - @arr.each do |hash|
+                    %td
+                      = sprintf( "%.1f", hash.profit / hash.sales.to_f * 100)
+                      ％
+                  %td
+                    = sprintf( "%.1f", (@profit_and_loss_statement.profit / @profit_and_loss_statement.sales.to_f * 100 - @profit_and_loss_statement_1.profit / @profit_and_loss_statement_1.sales.to_f * 100))
+                    ％
+                %tr
+                  %th （７）総資本経常利益率
+                  - @arr.each do |hash|
+                    %td
+                      = @answer_1 = sprintf( "%.1f", hash.ordinary_income / hash.total_capital.to_f * 100)
+                      ％
+                  %td
+                    = @answer_3 = sprintf( "%.1f", (@profit_and_loss_statement.ordinary_income / @profit_and_loss_statement.total_capital.to_f * 100 - @profit_and_loss_statement_1.ordinary_income / @profit_and_loss_statement_1.total_capital.to_f * 100))
+                    ％
+                %tr
+                  %th （８）総資本回転率
+                  - @arr.each do |hash|
+                    %td
+                      = @answer_7 = sprintf( "%.1f", hash.sales / hash.total_capital.to_f)
+                      回
+                  %td
+                    = @answer_9 = sprintf( "%.1f", @profit_and_loss_statement.sales / @profit_and_loss_statement.total_capital.to_f - @profit_and_loss_statement_1.sales / @profit_and_loss_statement_1.total_capital.to_f)
+                    回
+                %tr
+                  %th （９）固定資産回転率
+                  - @arr.each do |hash|
+                    %td
+                      = sprintf( "%.1f", hash.sales / hash.balance.fixed_assets.to_f)
+                      回
+                  %td
+                    = sprintf( "%.1f", @profit_and_loss_statement.sales / @profit_and_loss_statement.balance.fixed_assets.to_f - @profit_and_loss_statement_1.sales / @profit_and_loss_statement_1.balance.fixed_assets.to_f)
+                    回
+
+      .Company__Tables_2
+        %table.Company__Table_2
+          %tbody.Company__TableBody_2
+            - if @profit_and_loss_statement.present?
+              - if @profit_and_loss_statement_1.nil?
+                .Contents__Inner
+                  %tr
+                    %th 会計年度
+                    %td 
+                      = link_to @profit_and_loss_statement.fiscal_year, profit_and_loss_statement_path(@profit_and_loss_statement.id), method: :get, class: 'Btn__line'
+                      年
+                  %tr
+                    %th （１）売上高原価率
+                    %td
+                      = sprintf( "%.1f", @profit_and_loss_statement.cost_of_goods_sold / @profit_and_loss_statement.sales.to_f * 100)
+                      ％
+                  %tr
+                    %th （２）売上高総利益率
+                    %td
+                      = sprintf( "%.1f", @profit_and_loss_statement.gross_profit / @profit_and_loss_statement.sales.to_f * 100)
+                      ％
+                  %tr
+                    %th （３）売上高販管費率
+                    %td
+                      = sprintf( "%.1f", @profit_and_loss_statement.selling_expenses / @profit_and_loss_statement.sales.to_f * 100)
+                      ％
+                  %tr
+                    %th （４）売上高営業利益率
+                    %td
+                      = sprintf( "%.1f", @profit_and_loss_statement.operating_income / @profit_and_loss_statement.sales.to_f * 100)
+                      ％
+                  %tr
+                    %th （５）売上高経常益率
+                    %td
+                      = @answer_5 = sprintf( "%.1f", @profit_and_loss_statement.ordinary_income / @profit_and_loss_statement.sales.to_f * 100)
+                      ％
+                  %tr
+                    %th （６）売上高純利益率
+                    %td
+                      = sprintf( "%.1f", @profit_and_loss_statement.profit / @profit_and_loss_statement.sales.to_f * 100)
+                      ％
+                  %tr
+                    %th （７）総資本経常利益率
+                    %td
+                      = @answer_2 = sprintf( "%.1f", @profit_and_loss_statement.ordinary_income / @profit_and_loss_statement.total_capital.to_f * 100)
+                      ％
+                  %tr
+                    %th （８）総資本回転率
+                    %td
+                      = @answer_8  = sprintf( "%.1f", @profit_and_loss_statement.sales / @profit_and_loss_statement.total_capital.to_f)
+                      回
+                  %tr
+                    %th （９）固定資産回転率
+                    %td
+                      = sprintf( "%.1f", @profit_and_loss_statement.sales / @profit_and_loss_statement.balance.fixed_assets.to_f)
+                      回
+
+    .top
+      .top_title 安全性分析
+    
+    .Company__Inner
+      .Company__Tables_1
+        %table.Company__Table_1
+          %tbody.Company__TableBody_1  
+            - if @balance_sheet.present?
+              - if @balance_sheet_1.present?
+                .Contents__Inner
+                  %tr
+                    %th 会計年度
+                    - @arr_bs.each do |hash|
+                      %td
+                        = link_to hash.fiscal_year, balance_sheet_path(hash.id), class: 'Btn__line'
+                        年
+                    %td 増減率
+                  %tr
+                    %th （１）流動比率
+                    - @arr_bs.each do |hash|
+                      %td
+                        = sprintf( "%.1f", hash.current_assets / hash.current_liabilities.to_f * 100)
+                        ％
+                    %td
+                      = sprintf( "%.1f", (@balance_sheet.current_assets / @balance_sheet.current_liabilities.to_f * 100 - @balance_sheet_1.current_assets / @balance_sheet_1.current_liabilities.to_f * 100))
+                      ％
+                  %tr
+                    %th （２）固定比率
+                    - @arr_bs.each do |hash|
+                      %td
+                        = sprintf( "%.1f", hash.capital_stock / hash.fixed_assets.to_f * 100)
+                        ％
+                    %td
+                      = sprintf( "%.1f", (@balance_sheet.capital_stock / @balance_sheet.fixed_assets.to_f * 100 - @balance_sheet_1.capital_stock / @balance_sheet_1.fixed_assets.to_f * 100))
+                      ％
+                  %tr
+                    %th （３）固定長期適合率
+                    - @arr_bs.each do |hash|
+                      %td
+                        = sprintf( "%.1f", hash.fixed_assets / ( hash.fixed_liabilities + hash.capital_stock).to_f * 100)
+                        ％
+                    %td
+                      = sprintf( "%.1f", (@balance_sheet.fixed_assets / ( @balance_sheet.fixed_liabilities + @balance_sheet.capital_stock).to_f * 100 - @balance_sheet_1.fixed_assets / ( @balance_sheet_1.fixed_liabilities + @balance_sheet_1.capital_stock).to_f * 100))
+                      ％
+                  %tr
+                    %th （４）自己資本比率
+                    - @arr_bs.each do |hash|
+                      %td
+                        = sprintf( "%.1f", hash.capital_stock / ( hash.current_liabilities + hash.fixed_liabilities + hash.capital_stock).to_f * 100)
+                        ％
+                    %td
+                      = sprintf( "%.1f", (@balance_sheet.capital_stock / ( @balance_sheet.current_liabilities + @balance_sheet.fixed_liabilities + @balance_sheet.capital_stock).to_f * 100 - @balance_sheet_1.capital_stock / ( @balance_sheet_1.current_liabilities + @balance_sheet_1.fixed_liabilities + @balance_sheet_1.capital_stock).to_f * 100))
+                      ％
+
+      .Company__Tables_2
+        %table.Company__Table_2
+          %tbody.Company__TableBody_2
+            - if @balance_sheet.present?
+              - if @balance_sheet_1.nil?
+                .Contents__Inner
+                  %tr
+                    %th 会計年度
+                    %td 
+                      = link_to @balance_sheet.fiscal_year, balance_sheet_path(@balance_sheet.id), class: 'Btn__line'
+                      年
+                  %tr
+                    %th （１）流動比率
+                    %td 
+                      = sprintf( "%.1f", @balance_sheet.current_assets / @balance_sheet.current_liabilities.to_f * 100)
+                      ％
+                  %tr
+                    %th （２）固定比率
+                    %td 
+                      = sprintf( "%.1f", @balance_sheet.capital_stock / @balance_sheet.fixed_assets.to_f * 100)
+                      ％
+                  %tr
+                    %th （３）固定長期適合率
+                    %td 
+                      = sprintf( "%.1f", @balance_sheet.fixed_assets / ( @balance_sheet.fixed_liabilities + @balance_sheet.capital_stock).to_f * 100)
+                      ％
+                  %tr
+                    %th （４）自己資本比率
+                    %td 
+                      = sprintf( "%.1f", @balance_sheet.capital_stock / ( @balance_sheet.current_liabilities + @balance_sheet.fixed_liabilities + @balance_sheet.capital_stock).to_f * 100)
+                      ％

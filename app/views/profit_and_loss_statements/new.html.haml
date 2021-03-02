@@ -1,0 +1,116 @@
+.Contents
+  .top
+    .top_title P/L登録
+  
+  .Company_box_6
+    .Company__Inner_6
+      = form_with model:@profit_and_loss_statement, class: "form" do |f|
+        .Company__Tables_6
+          .required_6 必須
+          %table.Company__Table_6
+            %tbody.Company__TableBody_6
+              %tr
+                %th 対象企業 
+                %td
+                  = f.collection_select :company_id, Company.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+              %tr
+                %th 会計年度
+                %td
+                  = f.text_field :fiscal_year, class: "Form__inputText", placeholder: '西暦：20xx'
+              %tr
+                %th 売上高
+                %td
+                  = f.text_field :sales, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 売上原価
+                %td
+                  = f.text_field :cost_of_goods_sold, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 売上総利益
+                %td
+                  = f.text_field :gross_profit, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 販売費及び一般管理費
+                %td
+                  = f.text_field :selling_expenses, class: "Form__inputText", placeholder: '円単位' 
+              %tr
+                %th 営業利益
+                %td
+                  = f.text_field :operating_income, class: "Form__inputText", placeholder: '円単位' 
+              %tr
+                %th 営業外収益
+                %td
+                  = f.text_field :non_operating_income, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 営業外費用
+                %td
+                  = f.text_field :non_operating_expenses, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 経常利益
+                %td
+                  = f.text_field :ordinary_income, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 特別利益
+                %td
+                  = f.text_field :extraordinary_profits, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 特別損失
+                %td
+                  = f.text_field :extraordinary_loss, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 税引前当期純利益
+                %td
+                  = f.text_field :income_before_income_taxes, class: "Form__inputText", placeholder: '円単位'
+              %tr
+                %th 当期純利益
+                %td
+                  = f.text_field :profit, class: "Form__inputText", placeholder: '円単位'
+
+          .Table_box
+            .Table_box_0
+              .Table_0_1 
+                科目
+              .Table_0_2
+                金額
+            .Table_box_1
+              .Table_1_1
+                売上高
+              .Table_1_2
+              
+            .Table_box_2
+              .Table_2_1
+              .Table_2_2
+            .Table_box_3
+              .Table_3_1
+              .Table_3_2
+            .Table_box_4
+              .Table_4_1
+              .Table_4_2
+            .Table_box_5
+              .Table_5_1
+              .Table_5_2
+            .Table_box_6
+              .Table_6_1
+              .Table_6_2
+            .Table_box_7
+              .Table_7_1
+              .Table_7_2
+            .Table_box_8
+              .Table_8_1
+              .Table_8_2
+            .Table_box_9
+              .Table_9_1
+              .Table_9_2
+            .Table_box_10
+              .Table_box_10_1
+              .Table_box_10_2
+            .Table_box_11
+              .Table_box_11_1
+              .Table_box_11_2
+            .Table_box_12
+              .Table_box_12_1
+              .Table_box_12_2
+            
+        .Contents__first
+          .Contents__second
+            = f.submit "登録する", class: "form__submit"

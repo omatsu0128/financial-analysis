@@ -1,0 +1,114 @@
+.Contents
+  .top
+    .top_title B/S登録
+
+  .Company_box_5
+    .Company__Inner_5
+      = form_with model:@balance_sheet, class: "form" do |f|
+        .Company__Tables_5
+          .required_5 必須
+          %table.Company__Table_5
+            %tbody.Company__TableBody_5
+              %tr
+                %th 対象企業 
+                %td
+                  = f.collection_select :company_id, Company.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+              %tr
+                %th 会計年度
+                %td
+                  = f.text_field :fiscal_year, class: "Form__inputText", placeholder: '西暦：20xx'
+              %tr
+                %th 流動資産
+                %td
+                  = f.text_field :current_assets, class: "Form__inputText1 Sample1", placeholder: '円単位'
+              %tr
+                %th 固定資産
+                %td
+                  = f.text_field :fixed_assets, class: "Form__inputText2 Sample1", placeholder: '円単位'
+              %tr
+                %th 流動負債
+                %td
+                  = f.text_field :current_liabilities, class: "Form__inputText3 Sample2", placeholder: '円単位' 
+              %tr
+                %th 固定負債
+                %td
+                  = f.text_field :fixed_liabilities, class: "Form__inputText4 Sample2" , placeholder: '円単位' 
+              %tr
+                %th 純資産
+                %td
+                  = f.text_field :capital_stock, class: "Form__inputText5 Sample2", placeholder: '円単位'
+          
+          .Table_box
+            .Table_box_1
+              .Table_1
+                流動資産
+                .Value1 ー
+              .Table_2
+                固定資産
+                .Value2 ー
+              .Table_6
+                総資産
+                .Value6 ー
+            .Table_box_2
+              .Table_3
+                流動負債
+                .Value3 ー
+              .Table_4
+                固定負債
+                .Value4 ー
+              .Table_5 
+                純資産
+                .Value5 ー
+              .Table_7
+                総資本
+                .Value7 ー
+
+        .Contents__first
+          .Contents__second
+            = f.submit "登録する", class: "form__submit"
+
+    
+
+    
+
+  -# .contents__main__block
+  -#   .Main_box
+  -#     = form_with model:@balance_sheet do |f|
+  -#       .Company__contents
+  -#         .input_box
+  -#           %label.box_name 対象企業
+  -#           %span.required 必須
+  -#           = f.collection_select :company_id, Company.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+  -#       .Company__contents  
+  -#         .input_box
+  -#           %label.box_name 会計年度
+  -#           %span.required 必須
+  -#           = f.text_field :fiscal_year, class: "Form__inputText", placeholder: '西暦：20xx'
+  -#       .Company__contents  
+  -#         .input_box
+  -#           %label.box_name 流動資産
+  -#           %span.required 必須
+  -#           = f.text_field :current_assets, class: "Form__inputText", placeholder: '円単位'
+  -#       .Company__contents  
+  -#         .input_box
+  -#           %label.box_name 固定資産
+  -#           %span.required 必須
+  -#           = f.text_field :fixed_assets, class: "Form__inputText", placeholder: '円単位'
+  -#       .Company__contents  
+  -#         .input_box
+  -#           %label.box_name 流動負債
+  -#           %span.required 必須
+  -#           = f.text_field :current_liabilities, class: "Form__inputText", placeholder: '円単位' 
+  -#       .Company__contents  
+  -#         .input_box
+  -#           %label.box_name 固定負債
+  -#           %span.required 必須
+  -#           = f.text_field :fixed_liabilities, class: "Form__inputText", placeholder: '円単位' 
+  -#       .Company__contents  
+  -#         .input_box
+  -#           %label.box_name 純資産
+  -#           %span.required 必須
+  -#           = f.text_field :capital_stock, class: "Form__inputText", placeholder: '円単位'
+  -#       .Contents__first
+  -#         .Contents__second
+  -#           = f.submit "登録する", class: "form__submit"

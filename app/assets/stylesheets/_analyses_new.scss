@@ -1,0 +1,121 @@
+.contents {
+  width: 700px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  display: block;
+  justify-content: center;
+  padding: 40px 40px 64px;
+  
+  &__main {
+    padding: 40px 40px 64px;
+    &__block {
+      margin: 0 auto;
+      max-width: 500px;
+      border-top: 1px solid white;
+    }
+  }
+}
+input,
+  select {
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    width: 100%;
+    margin: 8x 0 0;
+  }
+  textarea {
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    width: 100%;
+    margin: 8x 0 0;
+  }
+
+.Main_box {
+  margin: 0px auto;
+  max-width: 700px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 18px;
+  background-color: white;
+  padding: 40px 40px 64px;
+  .Analysis__contents {
+    margin-top: 24px 0 0;
+    padding: 24px;
+    .input__box {
+      margin-top: 32px;
+      width: 100%;
+      padding: 32px;
+    }
+  }
+  
+}
+
+.box_name{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4em;
+  &__second {
+    height: 48px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin: 0;
+    outline: none;
+    padding: 0 16px;
+    display: inline-flex;
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+.required {
+  background-color: #ff0211;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 2px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin-left: 8px;
+  margin: 0 0 0 8px;
+}
+.required_1 {
+  background-color: #bfbfbf;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 4px;
+  margin-left: 8px;
+  border-radius: 2px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+.Contents__first {
+  background-color: #fff;
+}
+.Contents__second {
+  margin: 0px auto;
+  width: 360px;
+}
+.form__submit {
+  cursor: pointer;
+  padding: 0 24px;
+  min-height: 48px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 17px;
+  background-color: rgb(209, 209, 209);
+}

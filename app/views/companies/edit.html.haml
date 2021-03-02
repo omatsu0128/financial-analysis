@@ -1,0 +1,35 @@
+.Contents
+  .top
+    .top_title 企業編集
+
+  .contents__main__block
+    .Main_box
+      = form_with model:@company do |f|
+        .Company__contents 
+          .input_box
+            %label.box_name 企業名
+            %span.required 必須
+            = f.text_field :name, class: "Form__inputText", placeholder: '企業名'
+        .Company__contents   
+          .input_box
+            %label.box_name 所在地
+            %span.required 必須
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+        .Company__contents 
+          .input_box
+            %label.box_name 業種
+            %span.required 必須
+            = f.collection_select :industry_id, Industry.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+        .Company__contents 
+          .input_box
+            %label.box_name 企業規模
+            %span.required 必須
+            = f.collection_select :company_size_id, CompanySize.all, :id, :name, {prompt: "選択してください"}, {class: "section__second"}
+        .Company__contents   
+          .input_box
+            %label.box_name 内容・情報
+            %span.required_1 任意
+            = f.text_area :information, class: "section__second", rows: "7", placeholder: "企業の説明、業歴、社員数、取引先等"
+        .Contents__first
+          .Contents__second
+            = f.submit "編集する", class: "form__submit"

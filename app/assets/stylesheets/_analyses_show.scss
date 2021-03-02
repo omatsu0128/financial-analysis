@@ -1,0 +1,121 @@
+.Company_box {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  .Company__Inner {
+    width: 700px;
+    margin: 0px auto 30px;
+    padding: 20px 40px 20px;
+    background-color: white;
+  }
+}
+
+.Company__Tables {
+  .Company__Table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid white;
+  }
+}
+
+.Company__TableBody {
+  display: table-row-group;
+  vertical-align: middle;
+  tr {
+    display: table-row;
+    th {
+      width: 20%;
+      background-color: #eee;
+      font-weight: 400;
+      padding: 8px;
+      border: 1px solid lightgray;
+      font-size: 17px;
+      // text-align: center;
+    }
+    td {
+      width: 61%;
+      padding: 15px 15px;
+      border: 1px solid lightgray;
+      font-size: 17px;
+    }
+  }
+}
+
+.Company__Tables_1 {
+  .Company__Table_1 {
+    width: 90%;
+    border-collapse: collapse;
+    border: 1px solid white;
+  }
+}
+.Company__TableBody_1 {
+  display: table-row-group;
+  vertical-align: middle;
+  tr {
+    display: table-row;
+    th {
+      width: 40%;
+      background-color: #eee;
+      font-weight: 400;
+      padding: 8px;
+      border: 1px solid lightgray;
+      font-size: 14px;
+      text-align: left;
+    }
+    td {
+      width: 20%;
+      padding: 15px 15px;
+      border: 1px solid lightgray;
+      font-size: 14px;
+      text-align: right;
+    }
+  }
+  .Btn__line {
+    padding: 3px;
+    background-color: rgb(233, 232, 232);
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    border: 1px solid white;
+  }
+}
+
+.Company__Tables_2 {
+    .Company__Table_2 {
+      width: 50%;
+      border-collapse: collapse;
+      border: 1px solid white;
+    }
+  }
+  .Company__TableBody_2 {
+    display: table-row-group;
+    vertical-align: middle;
+    tr {
+      display: table-row;
+      th {
+        width: 30%;
+        background-color: #eee;
+        font-weight: 400;
+        padding: 8px;
+        border: 1px solid lightgray;
+        font-size: 14px;
+        text-align: left;
+      }
+      td {
+        width: 10%;
+        padding: 15px 15px;
+        border: 1px solid lightgray;
+        font-size: 14px;
+        text-align: right;
+      }
+    }
+    .Btn__line {
+      padding: 3px;
+      background-color: rgb(233, 232, 232);
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      border: 1px solid white;
+    }
+  }
+

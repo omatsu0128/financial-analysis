@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+}
+
+.Header {
+  height: 90px;
+  background-color: #45b0f8;
+  color: #ffffff;
+  &__logo {
+    text-align: center;
+    font-size: 36px;
+    line-height: 90px;
+    .Btn__line {
+      text-decoration: none;
+      color:#ffffff;
+    }
+  }
+}

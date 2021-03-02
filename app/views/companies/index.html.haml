@@ -1,0 +1,54 @@
+.Contents
+  .top__box
+    .Contents__btn
+      = link_to '企業登録', new_company_path, method: :get, class: 'Btn__line'
+    .Contents__btn
+      = link_to 'B/S登録', new_balance_sheet_path, method: :get, class: 'Btn__line'
+    .Contents__btn
+      = link_to 'P/L登録', new_profit_and_loss_statement_path, method: :get, class: 'Btn__line'
+    .Contents__btn
+      = link_to '査定登録', new_analysis_path, method: :get,class: 'Btn__line'
+
+  .top
+    .top_title 企業一覧
+
+  .Container
+    - @companies.each do |company|
+      .PickupLists
+        %ul
+          %li
+          .company.name
+          = link_to company.name, company_path(company.id), class: 'Btn__line'
+          %li
+          所在地：
+          = company.prefecture.name
+          %li
+          業種：
+          = company.industry.name
+          %li
+          .word_1 B/S
+          - company.balance_sheets.sort_by(&:fiscal_year).reverse!.first(3).each do |balance_sheet|
+            .yaer
+            = link_to balance_sheet.fiscal_year, balance_sheet_path(balance_sheet.id), class: 'Btn__line'
+            年
+            純資産
+            = balance_sheet.capital_stock.to_s(:delimited, delimiter: ',')
+            円
+          %li
+          .word_1 P/L
+          - company.profit_and_loss_statements.sort_by(&:fiscal_year).reverse!.first(3).each do |profit_and_loss_statement|
+            .year
+            = link_to profit_and_loss_statement.fiscal_year, profit_and_loss_statement_path(profit_and_loss_statement.id), method: :get, class: 'Btn__line'
+            年
+            売上高
+            = profit_and_loss_statement.sales.to_s(:delimited, delimiter: ',')
+            円
+          %li
+          .word_1 査定結果
+          - company.analyses.sort_by(&:fiscal_year).reverse!.first(3).each do |analysis|
+            .year
+            = link_to analysis.fiscal_year, analysis_path(analysis.id), class: 'Btn__line'
+            年
+            債務者区分
+            = analysis.classification.name
+          

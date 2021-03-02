@@ -1,0 +1,251 @@
+.Contents
+  .top__box
+    .Contents__btn
+      = link_to '編集する', edit_profit_and_loss_statement_path(@profit_and_loss_statement), method: :get, class: 'Btn__line'
+    .Contents__btn
+      = link_to '削除する', profit_and_loss_statement_path(@profit_and_loss_statement), method: :delete, class: 'Btn__line'
+  
+  .top
+    .top_title P/L詳細
+
+  .Company_box
+    .Company__Inner_3
+      .Company__Tables_3
+        %table.Company__Table_3
+          %tbody.Company__TableBody_3
+            %tr
+              %th 企業名
+              %td
+                = @profit_and_loss_statement.company.name
+
+    .Company__Inner_3
+      .Company__Tables_4
+        %table.Company__Table_4
+          %tbody.Company__TableBody_4
+            - if @profit_and_loss_statement_1.present?
+              .Contents__Inner
+              %tr
+                %th 会計年度
+                - @arr.each do |hash|
+                  %td
+                    = hash.fiscal_year 
+                    年
+                %td 増減額
+                %td 増減率
+              %tr
+                %th 売上高
+                - @arr.each do |hash|
+                  %td
+                    = hash.sales.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.sales - @profit_and_loss_statement_1.sales).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.sales - @profit_and_loss_statement_1.sales) / @profit_and_loss_statement_1.sales.to_f * 100)
+                  ％
+              %tr
+                %th 売上原価
+                - @arr.each do |hash|
+                  %td
+                    = hash.cost_of_goods_sold.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.cost_of_goods_sold - @profit_and_loss_statement_1.cost_of_goods_sold).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.cost_of_goods_sold - @profit_and_loss_statement_1.cost_of_goods_sold) / @profit_and_loss_statement_1.cost_of_goods_sold.to_f * 100)
+                  ％
+              %tr
+                %th  売上総利益
+                - @arr.each do |hash|
+                  %td
+                    = hash.gross_profit.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.gross_profit - @profit_and_loss_statement_1.gross_profit).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.gross_profit - @profit_and_loss_statement_1.gross_profit) / @profit_and_loss_statement_1.gross_profit.to_f * 100)
+                  ％
+              %tr
+                %th 販売費及び一般管理費
+                - @arr.each do |hash|
+                  %td
+                    = hash.selling_expenses.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.selling_expenses - @profit_and_loss_statement_1.selling_expenses).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.selling_expenses - @profit_and_loss_statement_1.selling_expenses) / @profit_and_loss_statement_1.selling_expenses.to_f * 100)
+                  ％
+              %tr
+                %th 営業利益
+                - @arr.each do |hash|
+                  %td
+                    = hash.operating_income.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.operating_income - @profit_and_loss_statement_1.operating_income).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.operating_income - @profit_and_loss_statement_1.operating_income) / @profit_and_loss_statement_1.operating_income.to_f * 100)
+                  ％
+              %tr
+                %th 営業外収益
+                - @arr.each do |hash|
+                  %td
+                    = hash.non_operating_income.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.non_operating_income - @profit_and_loss_statement_1.non_operating_income).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.non_operating_income - @profit_and_loss_statement_1.non_operating_income) / @profit_and_loss_statement_1.non_operating_income.to_f * 100)
+                  ％
+              %tr
+                %th 営業外費用
+                - @arr.each do |hash|
+                  %td
+                    = hash.non_operating_expenses.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.non_operating_expenses - @profit_and_loss_statement_1.non_operating_expenses).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.non_operating_expenses - @profit_and_loss_statement_1.non_operating_expenses) / @profit_and_loss_statement_1.non_operating_expenses.to_f * 100)
+                  ％
+              %tr
+                %th 経常利益
+                - @arr.each do |hash|
+                  %td
+                    = hash.ordinary_income.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.ordinary_income - @profit_and_loss_statement_1.ordinary_income).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.ordinary_income - @profit_and_loss_statement_1.ordinary_income) / @profit_and_loss_statement_1.ordinary_income.to_f * 100)
+                  ％
+              %tr
+                %th 特別利益
+                - @arr.each do |hash|
+                  %td
+                    = hash.extraordinary_profits.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.extraordinary_profits - @profit_and_loss_statement_1.extraordinary_profits).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.extraordinary_profits - @profit_and_loss_statement_1.extraordinary_profits) / @profit_and_loss_statement_1.extraordinary_profits.to_f * 100)
+                  ％
+              %tr
+                %th 特別損失
+                - @arr.each do |hash|
+                  %td
+                    = @profit_and_loss_statement_1.extraordinary_loss.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.extraordinary_loss - @profit_and_loss_statement_1.extraordinary_loss).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.extraordinary_loss - @profit_and_loss_statement_1.extraordinary_loss) / @profit_and_loss_statement_1.extraordinary_loss.to_f * 100)
+                  ％
+              %tr
+                %th 税引前当期純利益
+                - @arr.each do |hash|
+                  %td
+                    = hash.income_before_income_taxes.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.income_before_income_taxes - @profit_and_loss_statement_1.income_before_income_taxes).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.income_before_income_taxes - @profit_and_loss_statement_1.income_before_income_taxes) / @profit_and_loss_statement_1.income_before_income_taxes.to_f * 100)
+                  ％
+              %tr
+                %th 当期純利益
+                - @arr.each do |hash|
+                  %td
+                    = hash.profit.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@profit_and_loss_statement.profit - @profit_and_loss_statement_1.profit).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@profit_and_loss_statement.profit - @profit_and_loss_statement_1.profit) / @profit_and_loss_statement_1.profit.to_f * 100)
+                  ％
+
+      .Company__Tables_2
+        %table.Company__Table_2
+          %tbody.Company__TableBody_2
+            - if @profit_and_loss_statement_1.nil?
+              .Contents__Inner
+                %tr
+                  %th 会計年度
+                  %td
+                    = @profit_and_loss_statement.fiscal_year 
+                    年
+                %tr
+                  %th 売上高
+                  %td
+                    = @profit_and_loss_statement.sales.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 売上原価
+                  %td
+                    = @profit_and_loss_statement.cost_of_goods_sold.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 売上総利益
+                  %td
+                    = @profit_and_loss_statement.gross_profit.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 販売費及び一般管理費
+                  %td
+                    = @profit_and_loss_statement.selling_expenses.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 営業利益
+                  %td
+                    = @profit_and_loss_statement.operating_income.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 営業外収益
+                  %td
+                    = @profit_and_loss_statement.non_operating_income.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 営業外費用
+                  %td
+                    = @profit_and_loss_statement.non_operating_expenses.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 経常利益
+                  %td
+                    = @profit_and_loss_statement.ordinary_income.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 特別利益
+                  %td
+                    = @profit_and_loss_statement.extraordinary_profits.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 特別損失
+                  %td
+                    = @profit_and_loss_statement.extraordinary_loss.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 税引前当期純利益
+                  %td
+                    = @profit_and_loss_statement.income_before_income_taxes.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 当期純利益
+                  %td
+                    = @profit_and_loss_statement.profit.to_s(:delimited, delimiter: ',')
+                    円
+
+  

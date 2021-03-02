@@ -1,0 +1,42 @@
+.Company_box {
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 0 100px;
+    .Company__Inner {
+      width: 700px;
+      margin: 30px auto;
+      padding: 24px 40px 20px;
+      background-color: white;
+    }
+}
+
+  .Company__Tables {
+    .Company__Table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid white;
+    }
+  }
+  
+  .Company__TableBody {
+    display: table-row-group;
+    vertical-align: middle;
+    tr {
+      display: table-row;
+      th {
+        width: 20%;
+        background-color: #eee;
+        font-weight: 400;
+        padding: 8px;
+        border: 1px solid lightgray;
+        font-size: 14px;
+        text-align: center;
+      }
+      td {
+        width: 61%;
+        padding: 15px 15px;
+        border: 1px solid lightgray;
+        font-size: 14px;
+      }
+    }
+  }

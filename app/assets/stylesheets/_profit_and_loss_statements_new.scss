@@ -1,0 +1,152 @@
+.Company_box_6 {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  .Company__Inner_6 {
+    width: 900px;
+    margin: 0px auto 30px;
+    padding: 20px 20px 20px;
+    background-color: white;
+    .Contents__first {
+      margin-top: 20px;
+      justify-content: left;
+      .Contents__second{
+      }
+    }
+  }
+}
+
+.Company__Tables_6 {
+  display: flex;
+  .required_6 {
+    background-color: #ff0211;
+    color: #fff;
+    font-size: 12px;
+    padding: 250px 4px;
+    border-radius: 2px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4em;
+    text-align: center;
+  }
+  .Company__Table_6 {
+    width: 350px;
+    border-collapse: collapse;
+    border: 1px solid white;
+  }
+  .Table_box {
+    width: 400px;
+    margin-left: 50px;
+    .Table_box_0 {
+      height: 10px;
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_0_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(241, 248, 175);
+        padding-top: 7px;
+      }
+      .Table_0_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        background-color: rgb(241, 248, 175);
+        padding-top: 7px;
+      }
+    }
+    .Table_box_1 {
+      text-align: center;
+      width:50%;
+      .Table_1 {
+        height: 300px;
+        width:180px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        border-bottom: 0px;
+        
+        padding-top: 40%;
+        background-color: rgb(181, 218, 243);
+      }
+      .Table_2 {
+        height: 200px;
+        width:180px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        padding-top: 30%;
+        background-color: rgb(93, 186, 248);
+      }
+      .Table_6 {
+        width:180px;
+      }
+    }
+    .Table_box_2 {
+      text-align: center;
+      width:50%;
+      .Table_3 {
+        height: 230px;
+        width:180px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        padding-top: 40%;
+        background-color: rgb(243, 181, 238);
+      }
+      .Table_4 {
+        height: 170px;
+        width:180px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        padding-top: 30%;
+        background-color: rgb(250, 143, 205);
+      }
+      .Table_5 {
+        height: 100px;
+        width:180px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        padding-top: 10%;
+        background-color: rgb(245, 174, 132);
+      }
+      .table_7 {
+
+      }
+    }
+  }
+}
+
+.Company__TableBody_6 {
+  display: table-row-group;
+  vertical-align: middle;
+  tr {
+    height: 10px;
+    display: table-row;
+    th {
+      width: 15%;
+      background-color: #eee;
+      font-weight: 400;
+      padding: 8px;
+      border: 1px solid lightgray;
+      font-size: 14px;
+      text-align: left;
+    }
+    td {
+      width: 30%;
+      padding: 5px 15px;
+      border: 1px solid lightgray;
+      font-size: 14px;
+      text-align: right;
+    }
+  }
+}

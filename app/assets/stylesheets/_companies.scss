@@ -1,0 +1,79 @@
+.Contents {
+  min-height: 100%;
+  width:100%;
+  margin: 0 auto;
+  background-color: #cbf4f7;
+  &__message{
+    padding: 40px;
+    color:#0ba9da;
+    font-size:30px;
+    text-align: center;
+  }
+
+  .top__box {
+    display: flex;
+    height: 50px;
+    background-color: #cbf4f7;
+    align-items: center;
+    border-top: 1px solid white;
+    padding-left: 20px;
+    .Contents__btn {
+      padding: 10px;
+      .Btn__line {
+        padding: 10px;
+        background-color: rgb(249, 252, 251);
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+        border: 1px solid white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .top {
+    display: flex;
+    border-top: 1px solid white;
+    height: 50px;
+    background-color: #cbf4f7;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .top_title {
+      font-size: 25px;
+      color: black;
+    }
+  }
+  .Container { 
+    background-color: #cbf4f7;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 0 10px;
+    .PickupLists {
+      display: flex;
+      height: 420px;
+      width: 30%;
+      background-color: rgb(230, 227, 227);
+      padding: 10px;
+      margin: 10px;
+      font-size: 17px;
+      border: 1px solid rgb(5, 5, 5);
+      .Btn__line {
+        padding: 3px;
+        background-color: rgb(249, 252, 251);
+        text-decoration: none;
+        color: black;
+        font-size: 17px;
+        border: 1px solid white;
+      }
+    }
+  }
+  .word_1 {
+    font-weight: 600;
+  }
+}
+

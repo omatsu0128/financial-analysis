@@ -1,0 +1,132 @@
+.Contents
+  .top__box
+    .Contents__btn
+      = link_to '編集する', edit_balance_sheet_path(@balance_sheet), method: :get, class: 'Btn__line'
+    .Contents__btn
+      = link_to '削除する', balance_sheet_path(@balance_sheet), method: :delete, class: 'Btn__line'
+
+  .top
+    .top_title B/S詳細
+
+  .Company_box
+    .Company__Inner_3
+      .Company__Tables_3
+        %table.Company__Table_3
+          %tbody.Company__TableBody_3
+            %tr
+              %th 企業名
+              %td
+                = @balance_sheet.company.name
+
+    .Company__Inner_3
+      .Company__Tables_4
+        %table.Company__Table_4
+          %tbody.Company__TableBody_4
+            - if @balance_sheet_1.present?
+              .Contents__Inner
+              %tr
+                %th 会計年度
+                - @arr.each do |hash|
+                  %td
+                    = hash.fiscal_year 
+                    年
+                %td 増減額
+                %td 増減率
+              %tr
+                %th 流動資産
+                - @arr.each do |hash|
+                  %td 
+                    = hash.current_assets.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@balance_sheet.current_assets - @balance_sheet_1.current_assets).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@balance_sheet.current_assets - @balance_sheet_1.current_assets) / @balance_sheet_1.current_assets.to_f * 100)
+                  ％
+                  
+              %tr
+                %th 固定資産
+                - @arr.each do |hash|
+                  %td 
+                    = hash.fixed_assets.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@balance_sheet.fixed_assets - @balance_sheet_1.fixed_assets).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@balance_sheet.fixed_assets - @balance_sheet_1.fixed_assets) / @balance_sheet_1.fixed_assets.to_f * 100)
+                  ％
+              %tr
+                %th 流動負債
+                - @arr.each do |hash|
+                  %td 
+                    = hash.current_liabilities.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = @balance_sheet.current_liabilities.to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@balance_sheet.current_liabilities - @balance_sheet_1.current_liabilities) / @balance_sheet_1.current_liabilities.to_f * 100)
+                  ％
+              %tr
+                %th 固定負債
+                - @arr.each do |hash|
+                  %td 
+                    = hash.fixed_liabilities.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@balance_sheet.fixed_liabilities - @balance_sheet_1.fixed_liabilities).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@balance_sheet.fixed_liabilities - @balance_sheet_1.fixed_liabilities) / @balance_sheet_1.fixed_liabilities.to_f * 100)
+                  ％
+              %tr
+                %th 純資産
+                - @arr.each do |hash|
+                  %td 
+                    = hash.capital_stock.to_s(:delimited, delimiter: ',')
+                    円
+                %td
+                  = (@balance_sheet.capital_stock - @balance_sheet_1.capital_stock).to_s(:delimited, delimiter: ',')
+                  円
+                %td
+                  = sprintf( "%.1f",(@balance_sheet.capital_stock - @balance_sheet_1.capital_stock) / @balance_sheet_1.capital_stock.to_f * 100)
+                  ％
+
+      .Company__Tables_2
+        %table.Company__Table_2
+          %tbody.Company__TableBody_2
+            - if @balance_sheet_1.nil?
+              .Contents__Inner
+                %tr
+                  %th 会計年度
+                  %td
+                    = @balance_sheet.fiscal_year 
+                    年
+                %tr
+                  %th 流動資産
+                  %td
+                    = @balance_sheet.current_assets.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 固定資産
+                  %td 
+                    = @balance_sheet.fixed_assets.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 流動負債
+                  %td
+                    = @balance_sheet.current_liabilities.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 固定負債
+                  %td
+                    = @balance_sheet.fixed_liabilities.to_s(:delimited, delimiter: ',')
+                    円
+                %tr
+                  %th 純資産
+                  %td
+                    = @balance_sheet.capital_stock.to_s(:delimited, delimiter: ',')
+                    円
+ 
