@@ -7,6 +7,7 @@
     margin: 0px auto 30px;
     padding: 20px 20px 20px;
     background-color: white;
+    text-align: right;
     .Contents__first {
       margin-top: 20px;
       justify-content: left;
@@ -39,7 +40,6 @@
     width: 400px;
     margin-left: 50px;
     .Table_box_0 {
-      height: 10px;
       display: flex;
       text-align: center;
       width: 100%;
@@ -50,7 +50,7 @@
         border: 1px solid black;
         border-right: 0px;
         border-bottom: 0px;
-        background-color: rgb(241, 248, 175);
+        background-color: rgb(252, 233, 192);
         padding-top: 7px;
       }
       .Table_0_2 {
@@ -59,72 +59,394 @@
         border-collapse: collapse;
         border: 1px solid black;
         border-bottom: 0px;
-        background-color: rgb(241, 248, 175);
+        background-color: rgb(252, 233, 192);
         padding-top: 7px;
       }
     }
     .Table_box_1 {
+      display: flex;
       text-align: center;
-      width:50%;
-      .Table_1 {
-        height: 300px;
-        width:180px;
+      width: 100%;
+      .Table_1_1 {
+        height: 40px;
+        width:350px;
         border-collapse: collapse;
         border: 1px solid black;
         border-right: 0px;
         border-bottom: 0px;
-        
-        padding-top: 40%;
-        background-color: rgb(181, 218, 243);
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: left;
       }
-      .Table_2 {
-        height: 200px;
-        width:180px;
+      .Table_1_2 {
+        height: 40px;
+        width:350px;
         border-collapse: collapse;
         border: 1px solid black;
-        border-right: 0px;
-        padding-top: 30%;
-        background-color: rgb(93, 186, 248);
-      }
-      .Table_6 {
-        width:180px;
+        border-bottom: 0px;
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: right;
       }
     }
     .Table_box_2 {
+      display: flex;
       text-align: center;
-      width:50%;
-      .Table_3 {
-        height: 230px;
-        width:180px;
+      width: 100%;
+      .Table_2_1 {
+        height: 40px;
+        width:350px;
         border-collapse: collapse;
         border: 1px solid black;
+        border-top: 0px;
+        border-right: 0px;
         border-bottom: 0px;
-        padding-top: 40%;
-        background-color: rgb(243, 181, 238);
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: left;
       }
-      .Table_4 {
-        height: 170px;
-        width:180px;
+      .Table_2_2 {
+        height: 40px;
+        width:350px;
         border-collapse: collapse;
         border: 1px solid black;
+        border-top: 0px;
         border-bottom: 0px;
-        padding-top: 30%;
-        background-color: rgb(250, 143, 205);
-      }
-      .Table_5 {
-        height: 100px;
-        width:180px;
-        border-collapse: collapse;
-        border: 1px solid black;
-        padding-top: 10%;
-        background-color: rgb(245, 174, 132);
-      }
-      .table_7 {
-
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: right;
       }
     }
-  }
+    .Table_box_3 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_3_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-top: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: right;
+      }
+      .Table_3_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_4 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_4_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-top: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: left;
+      }
+      .Table_4_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-top: 0px;
+        border-bottom: 0px;
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_5 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_5_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-top: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: right;
+      }
+      .Table_5_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        background-color: rgb(252, 196, 196);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_6 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_6_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(196, 239, 252);
+        padding: 7px 10px;
+        text-align: left;
+      }
+      .Table_6_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        background-color: rgb(196, 239, 252);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_7 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_7_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        border-top: 0px;
+        border-bottom: 0px;
+        background-color: rgb(196, 239, 252);
+        padding: 7px 10px;
+        text-align: left;
+      }
+      .Table_7_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-top: 0px;
+        border-bottom: 0px;
+        background-color: rgb(196, 239, 252);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_8 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_8_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        border-top: 0px;
+        border-bottom: 0px;
+        background-color: rgb(196, 239, 252);
+        padding: 7px 10px;
+        text-align: right;
+      }
+      .Table_8_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        background-color: rgb(196, 239, 252);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_9 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_9_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(182, 250, 202);
+        padding: 7px 10px;
+        text-align: left;
+      }
+      .Table_9_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        background-color: rgb(182, 250, 202);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_10 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_10_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-top: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(182, 250, 202);
+        padding: 7px 10px;
+        text-align: left;
+      }
+      .Table_10_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-top: 0px;
+        border-bottom: 0px;
+        background-color: rgb(182, 250, 202);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_11 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_11_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-top: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(182, 250, 202);
+        padding: 7px 10px;
+        text-align: left;
+      }
+      .Table_11_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        background-color: rgb(182, 250, 202);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_11 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_11_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        border-bottom: 0px;
+        background-color: rgb(242, 248, 161);
+        padding: 7px 10px;
+        text-align: left;
+      }
+      .Table_11_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-bottom: 0px;
+        background-color: rgb(242, 248, 161);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+    .Table_box_12 {
+      display: flex;
+      text-align: center;
+      width: 100%;
+      .Table_12_1 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        border-right: 0px;
+        background-color: rgb(242, 248, 161);
+        padding: 7px 10px;
+        text-align: left;
+      }
+      .Table_12_2 {
+        height: 40px;
+        width:350px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        background-color: rgb(242, 248, 161);
+        padding: 7px 10px;
+        text-align: right;
+      }
+    }
+
+    // .Table_box_2 {
+    //   text-align: center;
+    //   width:50%;
+    //   .Table_3 {
+    //     height: 230px;
+    //     width:180px;
+    //     border-collapse: collapse;
+    //     border: 1px solid black;
+    //     border-bottom: 0px;
+    //     padding-top: 40%;
+    //     background-color: rgb(252, 196, 196);
+    //   }
+    //   .Table_4 {
+    //     height: 170px;
+    //     width:180px;
+    //     border-collapse: collapse;
+    //     border: 1px solid black;
+    //     border-bottom: 0px;
+    //     padding-top: 30%;
+    //     background-color: rgb(252, 196, 196);
+    //   }
+    //   .Table_5 {
+    //     height: 100px;
+    //     width:180px;
+    //     border-collapse: collapse;
+    //     border: 1px solid black;
+    //     padding-top: 10%;
+    //     background-color: rgb(245, 174, 132);
+    //   }
+    //   .table_7 {
+
+    //   }
+    }
 }
+
 
 .Company__TableBody_6 {
   display: table-row-group;
