@@ -81,52 +81,6 @@ $(function(){
     $('.Value12_2').html(formatter.format(data12))
     $('.Value12_2').append('円')
   })
-
-  // $('.form').on('keyup', '.SamplePL2', function(){
-  //   const data4 = $('.Form__inputText_PL4').val();
-  //   const data5 = parseInt(data3) - parseInt(data4);
-  //   if(Number.isInteger(data5)){
-  //     let formatter = new Intl.NumberFormat();
-  //     $('.Value4_2').html(formatter.format(data4))
-  //     $('.Value4_2').append('円')
-  //     $('.Value5_2').html(formatter.format(data5))
-  //     $('.Value5_2').append('円')
-  //   }
-  //   else{
-  //     let formatter = new Intl.NumberFormat();
-  //     $('.Value4_2').html(formatter.format(data4))
-  //     $('.Value4_2').append('円')
-  //     $('.Value5_2').html('ー')
-  //   }
-  // })
-
-  // $('.form').on('keyup', '.Sample2', function(){
-  //   const data3 = $('.Form__inputText3').val();
-  //   const data4 = $('.Form__inputText4').val();
-  //   const data5 = $('.Form__inputText5').val();
-  //   const data7 = parseInt(data3) + parseInt(data4) + parseInt(data5);
-  //   if(Number.isInteger(data7)){
-  //     let formatter = new Intl.NumberFormat();
-  //     $('.Value3').html(formatter.format(data3))
-  //     $('.Value3').append('円')
-  //     $('.Value4').html(formatter.format(data4))
-  //     $('.Value4').append('円')
-  //     $('.Value5').html(formatter.format(data5))
-  //     $('.Value5').append('円')
-  //     $('.Value7').html(formatter.format(data7))
-  //     $('.Value7').append('円')
-  //   }
-  //   else{
-  //     let formatter = new Intl.NumberFormat();
-  //     $('.Value3').html(formatter.format(data3))
-  //     $('.Value3').append('円')
-  //     $('.Value4').html(formatter.format(data4))
-  //     $('.Value4').append('円')
-  //     $('.Value5').html(formatter.format(data5))
-  //     $('.Value5').append('円')
-  //     $('.Value7').html('ー')
-  //   }
-  // })
   
 });
 
