@@ -4,6 +4,7 @@
   
   .Company_box_6
     .Company__Inner_6
+      単位：円
       = form_with model:@profit_and_loss_statement, class: "form" do |f|
         .Company__Tables_6
           .required_6 必須
@@ -20,51 +21,51 @@
               %tr
                 %th 売上高
                 %td
-                  = f.text_field :sales, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :sales, class: "Form__inputText_PL1 SamplePL1", placeholder: '円単位'
               %tr
                 %th 売上原価
                 %td
-                  = f.text_field :cost_of_goods_sold, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :cost_of_goods_sold, class: "Form__inputText_PL2 SamplePL1", placeholder: '円単位'
               %tr
                 %th 売上総利益
                 %td
-                  = f.text_field :gross_profit, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :gross_profit, class: "Form__inputText_PL3", placeholder: '円単位'
               %tr
                 %th 販売費及び一般管理費
                 %td
-                  = f.text_field :selling_expenses, class: "Form__inputText", placeholder: '円単位' 
+                  = f.text_field :selling_expenses, class: "Form__inputText_PL4 SamplePL1", placeholder: '円単位' 
               %tr
                 %th 営業利益
                 %td
-                  = f.text_field :operating_income, class: "Form__inputText", placeholder: '円単位' 
+                  = f.text_field :operating_income, class: "Form__inputText_PL5", placeholder: '円単位' 
               %tr
                 %th 営業外収益
                 %td
-                  = f.text_field :non_operating_income, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :non_operating_income, class: "Form__inputText_PL6 SamplePL1", placeholder: '円単位'
               %tr
                 %th 営業外費用
                 %td
-                  = f.text_field :non_operating_expenses, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :non_operating_expenses, class: "Form__inputText_PL7 SamplePL1", placeholder: '円単位'
               %tr
                 %th 経常利益
                 %td
-                  = f.text_field :ordinary_income, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :ordinary_income, class: "Form__inputText_PL8", placeholder: '円単位'
               %tr
                 %th 特別利益
                 %td
-                  = f.text_field :extraordinary_profits, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :extraordinary_profits, class: "Form__inputText_PL9 SamplePL1", placeholder: '円単位'
               %tr
                 %th 特別損失
                 %td
-                  = f.text_field :extraordinary_loss, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :extraordinary_loss, class: "Form__inputText_PL10 SamplePL1", placeholder: '円単位'
               %tr
                 %th 税引前当期純利益
                 %td
-                  = f.text_field :income_before_income_taxes, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :income_before_income_taxes, class: "Form__inputText_PL11", placeholder: '円単位'
               %tr
                 %th 当期純利益
                 %td
-                  = f.text_field :profit, class: "Form__inputText", placeholder: '円単位'
+                  = f.text_field :profit, class: "Form__inputText_PL12 SamplePL1", placeholder: '円単位'
 
           .Table_box
             .Table_box_0
@@ -76,41 +77,62 @@
               .Table_1_1
                 売上高
               .Table_1_2
-
+                .Value1_2 ー
             .Table_box_2
               .Table_2_1
                 売上原価
               .Table_2_2
+                .Value2_2 ー
             .Table_box_3
               .Table_3_1
+                売上総利益
               .Table_3_2
+                .Value3_2 ー
             .Table_box_4
               .Table_4_1
+                販売費及び一般管理費
               .Table_4_2
+                .Value4_2 ー
             .Table_box_5
               .Table_5_1
+                営業利益
               .Table_5_2
+                .Value5_2 ー
             .Table_box_6
               .Table_6_1
+                営業外収益
               .Table_6_2
+                .Value6_2 ー
             .Table_box_7
               .Table_7_1
+                営業外費用
               .Table_7_2
+                .Value7_2 ー
             .Table_box_8
               .Table_8_1
+                経常利益
               .Table_8_2
+                .Value8_2 ー
             .Table_box_9
               .Table_9_1
+                特別利益
               .Table_9_2
+                .Value9_2 ー
             .Table_box_10
-              .Table_box_10_1
-              .Table_box_10_2
+              .Table_10_1
+                特別損失
+              .Table_10_2
+                .Value10_2 ー
             .Table_box_11
-              .Table_box_11_1
-              .Table_box_11_2
+              .Table_11_1
+                税引前当期利益
+              .Table_11_2
+                .Value11_2 ー
             .Table_box_12
-              .Table_box_12_1
-              .Table_box_12_2
+              .Table_12_1
+                当期純利益
+              .Table_12_2
+                .Value12_2 ー
             
         .Contents__first
           .Contents__second
