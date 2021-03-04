@@ -4,7 +4,8 @@
 
   .contents__main__block
     .Main_box
-      = form_with model:@analysis do |f|
+      = form_with model:@analysis, local: true do |f|
+        = render 'layouts/error_messages', model: f.object
         .Analysis__contents 
           .input_box
             %label.box_name 対象企業
@@ -24,7 +25,7 @@
           .input_text
             %label.box_name 判定理由
             %span.required_1 任意
-            = f.text_area :information, class: "section__second", rows: "20", placeholder: "財務分析結果、形式判定、実質判定"
+            = f.text_area :information, class: "section__second", rows: "20", placeholder: "形式判定、実質判定 \n※500文字以内"
         .Contents__first
           .Contents__second
             = f.submit "登録する", class: "form__submit"

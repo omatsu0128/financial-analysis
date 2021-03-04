@@ -4,7 +4,8 @@
 
   .contents__main__block
     .Main_box
-      = form_with model:@analysis do |f|
+      = form_with model:@analysis, local: true do |f|
+        = render 'layouts/error_messages', model: f.object
         .Analysis__contents 
           .input_box
             %label.box_name 対象企業

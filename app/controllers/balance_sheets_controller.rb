@@ -27,7 +27,7 @@ class BalanceSheetsController < ApplicationController
     if @balance_sheet.update(balance_sheet_params)
       redirect_to balance_sheet_path(@balance_sheet)
     else
-      redirect_to edit_balance_sheet_path(@balance_sheet.id)
+      render :edit
     end
   end
 
