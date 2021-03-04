@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_155726) do
   create_table "analyses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "company_id", null: false
     t.integer "fiscal_year", null: false
-    t.integer "classification_id"
+    t.integer "classification_id", null: false
     t.text "information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
