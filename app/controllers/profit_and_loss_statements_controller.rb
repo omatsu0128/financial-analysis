@@ -27,7 +27,7 @@ class ProfitAndLossStatementsController < ApplicationController
     if @profit_and_loss_statement.update(profit_and_loss_statement_params)
       redirect_to profit_and_loss_statement_path(@profit_and_loss_statement)
     else
-      redirect_to edit_balance_sheet_path(@profit_and_loss_statement.id)
+      render :edit
     end
   end
 

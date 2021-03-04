@@ -5,7 +5,8 @@
   .Company_box_6
     .Company__Inner_6
       単位：円
-      = form_with model:@profit_and_loss_statement, class: "form" do |f|
+      = form_with model:@profit_and_loss_statement, class: "form", local: true do |f|
+        = render 'layouts/error_messages', model: f.object
         .Company__Tables_6
           .required_6 必須
           %table.Company__Table_6

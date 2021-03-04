@@ -3,7 +3,7 @@ class CreateAnalyses < ActiveRecord::Migration[6.0]
     create_table :analyses do |t|
       t.references :company,           null: false, fareign_key: :true
       t.integer    :fiscal_year,       null: false
-      t.integer    :classification_id
+      t.integer    :classification_id  null: false
       t.text       :information
       t.timestamps
     end

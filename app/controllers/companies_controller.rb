@@ -29,7 +29,7 @@ class CompaniesController < ApplicationController
     if @company.update(company_params)
       redirect_to company_path(@company)
     else
-      redirect_to edit_company_path(@company.id)
+      render :edit
     end
   end
 
