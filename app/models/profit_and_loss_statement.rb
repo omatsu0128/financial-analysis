@@ -18,7 +18,7 @@ class ProfitAndLossStatement < ApplicationRecord
 
 
   def total_capital
-    balance = BalanceSheet.find_by(fiscal_year: fiscal_year)
+    balance = BalanceSheet.find_by(fiscal_year: fiscal_year, company_id: company_id)
     arr = []
     arr << balance.capital_stock
     arr << balance.current_liabilities
@@ -27,6 +27,6 @@ class ProfitAndLossStatement < ApplicationRecord
   end
 
   def balance
-    balance = BalanceSheet.find_by(fiscal_year: fiscal_year)
+    balance = BalanceSheet.find_by(fiscal_year: fiscal_year, company_id: company_id)
   end
 end

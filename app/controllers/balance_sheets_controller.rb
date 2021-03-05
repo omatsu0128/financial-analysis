@@ -32,8 +32,12 @@ class BalanceSheetsController < ApplicationController
   end
 
   def destroy
-    balance_sheet = BalanceSheet.find(params[:id])
-    balance_sheet.destroy
+    if balance_sheet = BalanceSheet.find(params[:id])
+      balance_sheet.destroy
+      redirect_to root_path
+    else
+      redirect_to balance_sheet_path(@balance_sheet)
+    end
   end
 
   private

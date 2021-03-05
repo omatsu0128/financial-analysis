@@ -32,8 +32,12 @@ class ProfitAndLossStatementsController < ApplicationController
   end
 
   def destroy
-    profit_and_loss_statement = ProfitAndLossStatement.find(params[:id])
-    profit_and_loss_statement.destroy
+    if profit_and_loss_statement = ProfitAndLossStatement.find(params[:id])
+      profit_and_loss_statement.destroy
+      redirect_to root_path
+    else
+      redirect_to profit_and_loss_statement_path(@profit_and_loss_statement)
+    end
   end
   
   private

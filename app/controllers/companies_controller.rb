@@ -34,8 +34,12 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
-    company = Company.find(params[:id])
-    company.destroy
+    if company = Company.find(params[:id])
+      company.destroy
+      redirect_to root_path
+    else
+      redirect_to company_sheet_path(@company)
+    end
   end
 
   private

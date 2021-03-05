@@ -37,16 +37,6 @@ class AnalysesController < ApplicationController
         @answer_10 = sprintf( "%.1f",(@profit_and_loss_statement.sales - @profit_and_loss_statement_1.sales) / @profit_and_loss_statement_1.sales.to_f * 100).to_f
         @answer_11 = sprintf( "%.1f",(@profit_and_loss_statement.profit - @profit_and_loss_statement_1.profit) / @profit_and_loss_statement_1.profit.to_f * 100).to_f
       end
-    @str = "前期と比べ#{@answer_10 * -1}％減少した。"
-    # def word1
-    #   if @answer_10 > 0
-    #     puts "前期と比べ#{@answer_10}％増加した。"
-    #   elsif @answer_10 < 0
-    #     puts "前期と比べ#{@answer_10 * -1}％減少した。"
-    #   else
-    #     puts "前期と同様である。"
-    #   end
-    # end
   end
 
   def edit
@@ -63,8 +53,12 @@ class AnalysesController < ApplicationController
   end
 
   def destroy
-    analysis = Analysis.find(params[:id])
-    analysis.destroy
+    if analysis = Analysis.find(params[:id])
+      analysis.destroy
+      redirect_to root_path
+    else
+      redirect_to analysis_path(@analysis)
+    end
   end
   
   private
